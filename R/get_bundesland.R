@@ -1,0 +1,20 @@
+#' @export
+get_bundesland <- function(ags){
+		ags = ifelse( ags=="01", "Schleswig-Holstein", ags)
+		ags = ifelse( ags=="02", "Hamburg", ags)
+		ags = ifelse( ags=="03", "Niedersachsen", ags)
+		ags = ifelse( ags=="04", "Bremen", ags)
+		ags = ifelse( ags=="05", "Nordrhein-Westfalen", ags)
+		ags = ifelse( ags=="06", "Hessen", ags)
+		ags = ifelse( ags=="07", "Rheinland-Pfalz", ags)
+		ags = ifelse( ags=="08", "Baden-Württemberg", ags)
+		ags = ifelse( ags=="09", "Bayern", ags)
+		ags = ifelse( ags=="10", "Saarland", ags)
+		ags = ifelse( ags=="11", "Berlin", ags)
+		ags = ifelse( ags=="12", "Brandenburg", ags)
+		ags = ifelse( ags=="13", "Mecklenburg-Vorpommern", ags)
+		ags = ifelse( ags=="14", "Sachsen", ags)
+		ags = ifelse( ags=="15", "Sachsen-Anhalt", ags)
+		ags = ifelse( ags=="16", "Thüringen", ags)
+		return(ags)
+		}
