@@ -8,6 +8,7 @@ Imports:
 	raster (>= 2.5-8),
 	rgeos (>= 0.3-20), 
 	maptools (>= 0.8-40),
+	stringr (>= 1.1.0),
 	methods
 Depends:
     R (>= 3.3.1),

@@ -13,6 +13,7 @@ calc_area <- function(shp, pre){
 	return(shp)
 	}
 
+#' @export
 prep_vg250_shp <- function(shp, pre, new_version=new_version){
 	shp <- subset_shp(shp, pre=pre, new_version=new_version)
 	shp <- spTransform( shp, CRS( "+init=epsg:25832" ) ) 

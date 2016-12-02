@@ -24,10 +24,9 @@
 #' @references 
 #'
 #' @importFrom methods slot
-#' @importFrom sp spTransform CRS
 #' @importFrom maptools spCbind
 #' @importFrom rgeos gBuffer
 #' @importFrom raster aggregate intersect
-#' @importClassesFrom sp SpatialPolygons SpatialPolygonsDataFrame
+#' @importFrom stringr str_length str_sub
 NULL
 
