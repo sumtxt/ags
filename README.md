@@ -1,6 +1,6 @@
 The R package 'ags' provides a set of tools to work with the _Amtlicher Gemeindeschlüssel_ of Germany. The AGS is a structured ID that identifies administrative units in the territory of Germany. The primary function of this package is to allow users to create panels of counties and municipalities over time. 
 
-__ Early development stage __ 
+*Early development stage*
 
 # Creating a Panel
 
