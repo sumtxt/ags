@@ -28,5 +28,7 @@
 #' @importFrom rgeos gBuffer
 #' @importFrom raster aggregate intersect
 #' @importFrom stringr str_length str_sub
+#' @importFrom rgeos gIntersects
+#' @importFrom pbapply pblapply
 NULL
 

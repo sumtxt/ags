@@ -5,6 +5,11 @@ subset_shp <- function(shp, pre, new_version=TRUE){
 	return(shp)
 	}
 
+get_calc <- function(id, polyA, polyB, interAB){
+	res <- intersect(polyA[id,], polyB[interAB[,id]==TRUE,])
+	return(as.data.frame(calc_area(res, pre="")))
+	}
+
 calc_area <- function(shp, pre){ 
 	areas <- data.frame(area=sapply(shp@polygons, FUN=function(x) {slot(x, 'area')}) )
 	row.names(areas) <- sapply(shp@polygons, FUN=function(x) {slot(x, 'ID')})

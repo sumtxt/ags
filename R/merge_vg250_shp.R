@@ -1,15 +1,28 @@
 #' @export
-merge_vg250_shp <- function(base_shp, past_shp, shapefile=FALSE, new_version=TRUE, tol=0.025, verbose=0){
-
+merge_vg250_shp <- function(base_shp, past_shp, new_version=TRUE, tol=0.025, verbose=0){
+	
+	if(verbose != 0) cat("Cleaning Polygons...\n")
 	base_shp <- prep_vg250_shp(base_shp, pre="_base", new_version=new_version)
 	past_shp <- prep_vg250_shp(past_shp, pre="_past", new_version=new_version)
 
 	past_shp <- calc_area(past_shp, pre="_past")
 
-	join_shp <- intersect(base_shp,past_shp)
-	join_shp <- calc_area(join_shp, pre="")
+	if(verbose != 0) cat("Calculating Intersections...\n")
+	join_test <- gIntersects(base_shp,past_shp, byid=TRUE)
 
-	join_data <- as.data.frame(join_shp) 
+
+	N <- nrow(base_shp)
+	iterator <- seq(1, N)
+
+	if(verbose != 0) { 
+		cat("Calculating areas .... \n")
+		tmp <- pblapply(iterator, function(x) get_calc(x, base_shp,past_shp, join_test) )
+	} else { 
+		tmp <- lapply(iterator, function(x) get_calc(x, base_shp,past_shp, join_test) )
+		}
+
+	join_data <- do.call(rbind, tmp)
+
 	join_data$share <- join_data$area/join_data$area_past
 	join_data$share <- coarser_areashare(join_data$share, tol=tol)
 
@@ -20,8 +33,8 @@ merge_vg250_shp <- function(base_shp, past_shp, shapefile=FALSE, new_version=TRU
 		nBaseID <- n_dist(base_shp$AGS_base)
 		nPastID <- n_dist(past_shp$AGS_past)
 
-		nBaseIDmatch <- n_match(join_shp$AGS_base, base_shp$AGS_base)
-		nPastIDmatch <- n_match(join_shp$AGS_past, past_shp$AGS_past)
+		nBaseIDmatch <- n_match(join_data$AGS_base, base_shp$AGS_base)
+		nPastIDmatch <- n_match(join_data$AGS_past, past_shp$AGS_past)
 
 		cat("n(base_shp): ", nBaseID, "\n") 
 		cat("n(past_shp): ", nPastID, "\n" )
@@ -30,9 +43,5 @@ merge_vg250_shp <- function(base_shp, past_shp, shapefile=FALSE, new_version=TRU
 
 		}
 
-	if (shapefile == TRUE) {
-		return(join_shp)
-	} else { 
-		return(join_data)
-	}
+	return(join_data)
 	}
