@@ -6,8 +6,17 @@ subset_shp <- function(shp, pre, new_version=TRUE){
 	}
 
 get_calc <- function(id, polyA, polyB, interAB){
-	res <- intersect(polyA[id,], polyB[interAB[,id]==TRUE,])
-	return(as.data.frame(calc_area(res, pre="")))
+	if ( sum(interAB[,id]) == 0) { 
+		res <- as.data.frame(polyA[id,])
+		res['AGS_past'] <- NA
+		res['GEN_past'] <- NA
+		res['area_past'] <- NA
+		res['area'] <- NA
+		return(res)
+	} else { 
+		res <- intersect(polyA[id,], polyB[interAB[,id]==TRUE,])
+		return(as.data.frame(calc_area(res, pre="")))
+	}
 	}
 
 calc_area <- function(shp, pre){ 
@@ -23,8 +32,10 @@ prep_vg250_shp <- function(shp, pre, new_version=new_version){
 	shp <- subset_shp(shp, pre=pre, new_version=new_version)
 	shp <- spTransform( shp, CRS( "+init=epsg:25832" ) ) 
 	shp <- gBuffer(shp, byid=TRUE, width=0)
-	shp <- aggregate(shp, by=paste('AGS',pre,sep=""), sums=list(list(unique, paste('GEN',pre,sep="") ) ) )
-	return(shp)
+	tmp <- aggregate(shp, by=paste('AGS',pre,sep=""), sums=list(list(unique, paste('GEN',pre,sep=""))) )
+	# Looks like that if shp can not be aggregate, all columns are dropped. The next line is a hack too 
+	# circumvent the problem. 
+	if (nrow(tmp)==nrow(shp)) { return(shp) } else { return(tmp) }
 	}
 
 coarser_areashare <- function(area, tol){
