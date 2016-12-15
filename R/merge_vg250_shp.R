@@ -1,9 +1,9 @@
 #' @export
-merge_vg250_shp <- function(base_shp, past_shp, new_version=TRUE, tol=0.025, verbose=0){
+merge_vg250_shp <- function(base_shp, past_shp, base_new_version=TRUE, past_new_version=TRUE, tol=0.025, verbose=0){
 	
 	if(verbose != 0) cat("Cleaning Polygons...\n")
-	base_shp <- prep_vg250_shp(base_shp, pre="_base", new_version=new_version)
-	past_shp <- prep_vg250_shp(past_shp, pre="_past", new_version=new_version)
+	base_shp <- prep_vg250_shp(base_shp, pre="_base", new_version=base_new_version)
+	past_shp <- prep_vg250_shp(past_shp, pre="_past", new_version=past_new_version)
 
 	past_shp <- calc_area(past_shp, pre="_past")
 
