@@ -2,8 +2,8 @@
 % Please edit documentation in R/ags-package.R
 \docType{package}
 \name{ags-package}
-\alias{ags}
 \alias{ags-package}
+\alias{ags}
 \title{Tools to work with the German AGS.}
 \description{
 Useful tools to work with German AGS.
@@ -23,7 +23,3 @@ Feedback is very welcome!
 \author{
 Moritz Marbach \email{marbach@ipz.uzh.ch}
 }
-\references{
-
-}
-

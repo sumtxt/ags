@@ -21,14 +21,5 @@
 #' @aliases ags
 #' @title Tools to work with the German AGS.
 #' @author Moritz Marbach \email{marbach@ipz.uzh.ch}
-#' @references 
-#'
-#' @importFrom methods slot
-#' @importFrom maptools spCbind
-#' @importFrom rgeos gBuffer
-#' @importFrom raster aggregate intersect
-#' @importFrom stringr str_length str_sub
-#' @importFrom rgeos gIntersects
-#' @importFrom pbapply pblapply
 NULL
 
