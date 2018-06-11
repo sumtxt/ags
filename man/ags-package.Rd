@@ -21,5 +21,5 @@ Feedback is very welcome!
 	}
 }
 \author{
-Moritz Marbach \email{marbach@ipz.uzh.ch}
+Moritz Marbach \email{moritz.marbach@gess.ethz.ch}
 }

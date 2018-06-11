@@ -20,6 +20,10 @@
 #' @docType package
 #' @aliases ags
 #' @title Tools to work with the German AGS.
-#' @author Moritz Marbach \email{marbach@ipz.uzh.ch}
+#' @author Moritz Marbach \email{moritz.marbach@gess.ethz.ch}
+#' 
+#' 
+#' @importFrom stringr str_detect
+#' 
 NULL
 

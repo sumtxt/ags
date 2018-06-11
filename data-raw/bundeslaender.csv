@@ -1,0 +1,17 @@
+﻿id,regex,name_de,name_eng,label
+1,Schleswig.Holstein,Schleswig-Holstein,Schleswig-Holstein,SH
+2,Hamburg,Hamburg,Hamburg,HH
+3,Niedersachsen|Lower Saxony,Niedersachsen,Lower Saxony,NI
+4,Bremen,Bremen,Bremen,HB
+5,Nordrhein.Westfalen|NRW|North Rhine.Westphalia,Nordrhein-Westfalen,North Rhine-Westphalia,NW
+6,Hesse,Hessen,Hesse,HE
+7,Rheinland.Pfalz|Rhineland.Palatinate,Rheinland-Pfalz,Rhineland-Palatinate,RP
+8,Baden.W(ue|ü)rttemberg|BaWü,Baden-Württemberg,Baden-Württemberg,BW
+9,Bayern|Bavaria,Bayern,Bavaria,BY
+10,Saarland,Saarland,Saarland,SL
+11,Berlin,Berlin,Berlin,BE
+12,Brandenburg,Brandenburg,Brandenburg,BB
+13,Mecklenburg.Vorpommern|MeckPom,Mecklenburg-Vorpommern,Mecklenburg-Vorpommern,MV
+14,^Sachsen$|^Saxony$,Sachsen,Saxony,SN
+15,Sachsen.Anhalt|Saxony.Anhalt,Sachsen-Anhalt,Saxony-Anhalt,ST
+16,Th(ue|ü)ringen|Thuringia,Thüringen,Thuringia,TH

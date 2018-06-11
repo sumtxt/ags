@@ -7,10 +7,27 @@
 ags_dist(x, y, landw = 10^6, kreisw = 10^3, gemw = 1,
   ceiling = 99999999)
 }
+\arguments{
+\item{x, y}{AGS number}
+
+\item{landw}{weight of the Bundesland (state) integers}
+
+\item{kreisw}{weight of the Kreis (county) integers}
+
+\item{gemw}{weight of the Gemeinde (municipality) integers}
+
+\item{ceiling}{truncate all distances at this value}
+}
 \description{
 Calculates the distance between two AGS numbers
 }
 \details{
-The default is just the difference between 
-the two integer numbers.
+The distance is defined as 
+
+(x[1:2]- y[1:2])*landw  + (x[3:5]- y[3:5])*kreisw + (x[6:8]- y[6:8])*gemw,
+
+where z[a:b] means all digits between a and b for integer z. 
+
+With the default weights, this sum is just (x-y), ie. the 
+difference between the two AGS numbers.
 }

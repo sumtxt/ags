@@ -1,9 +1,21 @@
 #' Calculates the distance between two AGS numbers 
 #' 
+#' @param x,y AGS number 
+#' @param landw weight of the Bundesland (state) integers 
+#' @param kreisw weight of the Kreis (county) integers 
+#' @param gemw weight of the Gemeinde (municipality) integers 
+#' @param ceiling truncate all distances at this value 
 #' 
 #' @details 
-#' The default is just the difference between 
-#' the two integer numbers. 
+#' The distance is defined as 
+#' 
+#' (x[1:2]- y[1:2])*landw  + (x[3:5]- y[3:5])*kreisw + (x[6:8]- y[6:8])*gemw,
+#' 
+#' where z[a:b] means all digits between a and b for integer z. 
+#' 
+#' With the default weights, this sum is just (x-y), ie. the 
+#' difference between the two AGS numbers.  
+#' 
 #' 
 #' 
 #' @export
