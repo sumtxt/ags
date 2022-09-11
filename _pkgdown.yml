@@ -1,21 +1,17 @@
-url: ~
-
+url: https://sumtxt.github.io/ags/
 home:
   title: ags - Crosswalk Municipality and District Statistics in Germany
-
 authors:
-  Moritz Marbach: 
-    href: "http://moritz-marbach.com/"
-
+  Moritz Marbach:
+    href: http://moritz-marbach.com/
 reference:
-- title: "Main functions"
-- contents: 
-    - xwalk_ags
-- title: "Utilities"
-- contents: 
-    - format_ags
-    - code_bundesland
-    - ags_dist
-- title: "Data"
-- contents: 
-    - btw_sn
+- title: Main functions
+- contents: xwalk_ags
+- title: Utilities
+- contents:
+  - format_ags
+  - code_bundesland
+  - ags_dist
+- title: Data
+- contents: btw_sn
+

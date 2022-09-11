@@ -21,3 +21,4 @@ Suggests:
     rmarkdown, 
     tidyverse
 VignetteBuilder: knitr
+URL: https://sumtxt.github.io/ags/
