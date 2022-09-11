@@ -1,4 +1,4 @@
-#' Crosswalk municipality or district statistics
+#' Crosswalk Municipality or District Statistics
 #'
 #' This function constructs time series of counts for Germany's municipalities
 #' (Gemeinden) and districts (Kreise).

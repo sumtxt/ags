@@ -13,7 +13,7 @@ remotes::install_github("sumtxt/ags", force=TRUE)
 
 ### Usage
 
-For details on how to use the package: [Getting Started with wiesbaden]().
+For details on how to use the package: [Getting Started with wiesbaden](https://sumtxt.github.io/ags/).
 
 
 ### Complementary Packages 

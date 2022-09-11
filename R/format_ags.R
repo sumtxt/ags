@@ -1,4 +1,4 @@
-#' Formats AGS With a Leading Zero 
+#' Formats AGS with a Leading Zero 
 #' 
 #' @param ags Input vector that will be coerced into an integer
 #' vector. Factor vectors are first coerced to a character vector
