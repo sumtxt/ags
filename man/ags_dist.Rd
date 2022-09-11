@@ -23,9 +23,11 @@ Defines a distance metric for the AGS
 \details{
 The distance metric is defined as
 
-abs(x\link{1:2}- y\link{1:2})*landw  + abs(x\link{3:5}- y\link{3:5})*kreisw + abs(x\link{6:8}- y\link{6:8})*gemw,
+abs(x[1:2]- y[1:2])*landw  +
+abs(x[3:5]- y[3:5])*kreisw +
+abs(x[6:8]- y[6:8])*gemw,
 
-where z\link{a:b} means all digits between a and b for integer z.
+where z[a:b] means all digits between a and b for integer z.
 
 With the default weights, this sum is the absolute difference
 between x and y.

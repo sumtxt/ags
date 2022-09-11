@@ -53,5 +53,7 @@ btw_sn \%>\%
  mutate(bl=code_bundesland(district, origin="ags", 
      destination="name"))
 
-
+}
+\seealso{
+\code{\link[=format_ags]{format_ags()}} for formatting AGS.
 }

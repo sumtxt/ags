@@ -5,10 +5,10 @@ Description: This packages helps to construct time series for Germany's municipa
 Author: Moritz Marbach" <m.marbach@ucl.ac.uk [aut, cre]
 Maintainer: Moritz Marbach <m.marbach@ucl.ac.uk>
 Imports: 
+	stats (>= 4.2.0), 
     rlang (>= 1.0.4),
 	dplyr (>= 1.0.9),
 	stringr (>= 1.4.0),
-	methods
 Depends:
     R (>= 4.2.0)
 License: GPL-3
@@ -18,5 +18,6 @@ RoxygenNote: 7.2.1
 Roxygen: list(markdown = TRUE)
 Suggests: 
     knitr,
-    rmarkdown
+    rmarkdown, 
+    tidyverse
 VignetteBuilder: knitr

@@ -3,7 +3,7 @@
 \docType{data}
 \name{btw_sn}
 \alias{btw_sn}
-\title{Number of voters and votes in Saxony (1994-2017)}
+\title{Number of voters and valid votes in Saxony (1994-2017)}
 \format{
 A data frame with 155 rows and 4 variables:
 \describe{
@@ -14,13 +14,14 @@ A data frame with 155 rows and 4 variables:
 }
 }
 \source{
-\url{http://www.regionalstatistik.de}
+\url{https://www.regionalstatistik.de}
 }
 \usage{
 btw_sn
 }
 \description{
-The dataset includes the number of voters and votes in all
-federal elections (Bundestagswahlen) in Saxony for all districts.
+The dataset includes the number of voters and valid votes
+in all federal elections (Bundestagswahlen) across
+districts in Saxony.
 }
 \keyword{datasets}

@@ -70,7 +70,7 @@ and \code{time}.
 }
 }
 \description{
-This function construct time series of counts for Germany's municipalities
+This function constructs time series of counts for Germany's municipalities
 (Gemeinden) and districts (Kreise).
 }
 \details{
