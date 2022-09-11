@@ -1,6 +1,6 @@
 # ags 
 
-The R package `ags` helps to construct time series for Germany's municipalities (Gemeinden) and districts (Kreise) using a crosswalk constructed by the _Bundesinstitut für Bau-, Stadt- und Raumforschung_ (BBSR). The same crosswalks are used to construct the [INKAR database](https://www.inkar.de/) which can be accessed using the package [bonn](https://github.com/sumtxt/bonn).
+The R package `ags` helps to construct time series of statistics for Germany's municipalities (Gemeinden) and districts (Kreise) using crosswalks provided by the _Bundesinstitut für Bau-, Stadt- und Raumforschung_ (BBSR). The same crosswalks are used to assemble the [INKAR database](https://www.inkar.de/) which can be accessed using the package [bonn](https://github.com/sumtxt/bonn).
 
 
 ### Installation 
@@ -13,7 +13,8 @@ remotes::install_github("sumtxt/ags", force=TRUE)
 
 ### Usage
 
-For details on how to use the package: [Getting Started with wiesbaden](https://sumtxt.github.io/ags/).
+The [Getting Started](https://sumtxt.github.io/ags/articles/ags.html) vignette provides details on how to use this package. 
+
 
 
 ### Complementary Packages 
