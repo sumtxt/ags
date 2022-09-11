@@ -2,32 +2,35 @@
 % Please edit documentation in R/ags_dist.R
 \name{ags_dist}
 \alias{ags_dist}
-\title{Calculates the distance between two AGS numbers}
+\title{Defines a distance metric for the AGS}
 \usage{
-ags_dist(x, y, landw = 10^6, kreisw = 10^3, gemw = 1,
-  ceiling = 99999999)
+ags_dist(x, y, landw = 10^6, kreisw = 10^3, gemw = 1, ceiling = 99999999)
 }
 \arguments{
-\item{x, y}{AGS number}
+\item{x, y}{vectors of AGS values}
 
-\item{landw}{weight of the Bundesland (state) integers}
+\item{landw}{weight of the Bundesland (Land) integers}
 
-\item{kreisw}{weight of the Kreis (county) integers}
+\item{kreisw}{weight of the Kreis (district) integers}
 
 \item{gemw}{weight of the Gemeinde (municipality) integers}
 
 \item{ceiling}{truncate all distances at this value}
 }
 \description{
-Calculates the distance between two AGS numbers
+Defines a distance metric for the AGS
 }
 \details{
-The distance is defined as 
+The distance metric is defined as
 
-(x[1:2]- y[1:2])*landw  + (x[3:5]- y[3:5])*kreisw + (x[6:8]- y[6:8])*gemw,
+abs(x\link{1:2}- y\link{1:2})*landw  + abs(x\link{3:5}- y\link{3:5})*kreisw + abs(x\link{6:8}- y\link{6:8})*gemw,
 
-where z[a:b] means all digits between a and b for integer z. 
+where z\link{a:b} means all digits between a and b for integer z.
 
-With the default weights, this sum is just (x-y), ie. the 
-difference between the two AGS numbers.
+With the default weights, this sum is the absolute difference
+between x and y.
+}
+\examples{
+ags_dist(14053,14059)
+
 }

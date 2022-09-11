@@ -1,20 +1,22 @@
 Package: ags
-Title: Tools to work with the German AGS
-Version: 0.0.0.9000
-Description: Useful tools work with the German AGS.
-Author: Moritz Marbach" <marbach@ipz.uzh.ch [aut, cre]
-Maintainer: Moritz Marbach <marbach@ipz.uzh.ch>
+Title: Crosswalk Municipality and District Statistics in Germany
+Version: 1.0.0
+Description: This packages helps to construct time series for Germany's municipalities (Gemeinden) and districts (Kreise) using a annual crosswalk constructed by the Bundesinstitut für Bau-, Stadt- und Raumforschung (BBSR). 
+Author: Moritz Marbach" <m.marbach@ucl.ac.uk [aut, cre]
+Maintainer: Moritz Marbach <m.marbach@ucl.ac.uk>
 Imports: 
-	raster (>= 2.5-8),
-	rgeos (>= 0.3-20), 
-	maptools (>= 0.8-40),
-	stringr (>= 1.1.0),
-	pbapply (>= 1.3-1),
+    rlang (>= 1.0.4),
+	dplyr (>= 1.0.9),
+	stringr (>= 1.4.0),
 	methods
 Depends:
-    R (>= 3.3.1),
-    sp (>= 1.2-3)
+    R (>= 4.2.0)
 License: GPL-3
 Encoding: UTF-8
 LazyData: true
-RoxygenNote: 6.0.1
+RoxygenNote: 7.2.1
+Roxygen: list(markdown = TRUE)
+Suggests: 
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr

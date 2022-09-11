@@ -2,5 +2,9 @@
 
 export(ags_dist)
 export(code_bundesland)
-export(get_bundesland)
-importFrom(stringr,str_detect)
+export(format_ags)
+export(xwalk_ags)
+import(dplyr)
+import(stringr)
+importFrom(rlang,.data)
+importFrom(stats,na.omit)

@@ -2,37 +2,56 @@
 % Please edit documentation in R/code_bundesland.R
 \name{code_bundesland}
 \alias{code_bundesland}
-\title{Transforms the name of a Bundesland into the Bundesland ID}
+\title{Convert the Name or the AGS of a Bundesland}
 \usage{
-code_bundesland(string, render = "id")
+code_bundesland(
+  sourcevar,
+  origin = "name",
+  destination = "ags",
+  factor = FALSE
+)
 }
 \arguments{
-\item{render}{return ID (default), \code{name}, the \code{label}, English name (\code{name_eng})?}
+\item{sourcevar}{Vector which contains the codes or names
+to be converted.}
 
-\item{x}{string (or vector of strings) to be converted into ID}
+\item{origin}{The following options are available:
+\itemize{
+\item \code{ags}: AGS (default).
+\item \code{name}: Bundesland name.
+}}
+
+\item{destination}{The following options are available:
+\itemize{
+\item \code{ags}: Bundesland AGS (default).
+\item \code{iso}: The Bundesland two-character abbreviation.
+\item \code{name}: Bundesland name.
+\item \code{name_eng}: Bundesland name in English.
+}}
+
+\item{factor}{If \code{TRUE} returns ordered factor.}
 }
 \value{
-a character vector of valid Bundesland ID
+A character vector.
 }
 \description{
-Transforms the name of a Bundesland into the Bundesland ID
+Convert the Name or the AGS of a Bundesland
 }
 \details{
-The first two digits of the 8 digit Amtlicher Gemeindeschlüssel (AGS) encode  
-the Bundesland (Bundesland ID). This function converts the name of Bundesland into 
-the Bundesland ID, or the standardized (English) name, the label.
+This function converts a string of Bundesland names into
+the AGS, the standardized (English) name, or the Bundesland abbreviation.
+
+If \code{origin="AGS"}, the first two digits will be used to identify
+a Bundesland. It is therefore important that \code{sourcevar} is supplied
+as a character vector with a leading zeros if applicable.
 }
 \examples{
- \dontrun{
- 
-  code_bundesland( c("NRW", "Berlin") )
+library(dplyr)
+data(btw_sn)
 
- }
+btw_sn \%>\% 
+ mutate(bl=code_bundesland(district, origin="ags", 
+     destination="name"))
 
 
-
-
-}
-\seealso{
-\link{get_bundesland}
 }

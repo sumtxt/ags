@@ -1,0 +1,17 @@
+﻿ags,regex,name,name_eng,iso,ns_order
+01,Schleswig.Holstein,Schleswig-Holstein,Schleswig-Holstein,SH,1
+02,Hamburg,Hamburg,Hamburg,HH,2
+03,Niedersachsen|Lower Saxony,Niedersachsen,Lower Saxony,NI,3
+04,Bremen,Bremen,Bremen,HB,5
+05,Nordrhein.Westfalen|NRW|North Rhine.Westphalia,Nordrhein-Westfalen,North Rhine-Westphalia,NW,6
+06,Hesse,Hessen,Hesse,HE,10
+07,Rheinland.Pfalz|Rhineland.Palatinate,Rheinland-Pfalz,Rhineland-Palatinate,RP,13
+08,Baden.W(ue|ü)rttemberg|BaWü,Baden-Württemberg,Baden-Württemberg,BW,15
+09,Bayern|Bavaria,Bayern,Bavaria,BY,16
+10,Saarland,Saarland,Saarland,SL,14
+11,Berlin,Berlin,Berlin,BE,8
+12,Brandenburg,Brandenburg,Brandenburg,BB,9
+13,Mecklenburg.Vorpommern|MeckPom,Mecklenburg-Vorpommern,Mecklenburg-Vorpommern,MV,4
+14,^Sachsen$|^Saxony$,Sachsen,Saxony,SN,12
+15,Sachsen.Anhalt|Saxony.Anhalt,Sachsen-Anhalt,Saxony-Anhalt,ST,7
+16,Th(ue|ü)ringen|Thuringia,Thüringen,Thuringia,TH,11
