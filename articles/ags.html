@@ -72,26 +72,44 @@
 <div class="section level2">
 <h2 id="introduction">Introduction<a class="anchor" aria-label="anchor" href="#introduction"></a>
 </h2>
-<p>Constructing time series for Germany’s municipalities and districts is often challenging as borders of these units change over time. Some of today’s districts are the product of multiple districts that merged and got split up in the past (the same applies to municipalities but to a lesser extent). When district and municipality borders change significantly, the district and municipality identifiers (<em>Amtlicher Gemeindeschlüssel</em>, AGS) change too.</p>
-<p>To compile long time series for municipalities and districts, the Federal Office for Building and Regional Planning (<em>Bundesinstitut für Bau-, Stadt- und Raumforschung</em>, BBSR) has constructed annual crosswalks starting in 1990. These crosswalks map one year’s set of district (municipality) identifiers to later year’s identifiers and provide weights to perform area (or population) weighted interpolation for count data.</p>
+<p>Constructing time series for Germany’s municipalities and districts
+is often challenging as borders of these units change over time. Some of
+today’s districts are the product of multiple districts that merged and
+got split up in the past (the same applies to municipalities but to a
+lesser extent). When district and municipality borders change
+significantly, the district and municipality identifiers (<em>Amtlicher
+Gemeindeschlüssel</em>, AGS) change too.</p>
+<p>To compile long time series for municipalities and districts, the
+Federal Office for Building and Regional Planning (<em>Bundesinstitut
+für Bau-, Stadt- und Raumforschung</em>, BBSR) has constructed annual
+crosswalks starting in 1990. These crosswalks map one year’s set of
+district (municipality) identifiers to later year’s identifiers and
+provide weights to perform area (or population) weighted interpolation
+for count data.</p>
 <div class="section level3">
 <h3 id="amtlicher-gemeindeschlüssel">Amtlicher Gemeindeschlüssel<a class="anchor" aria-label="anchor" href="#amtlicher-gemeindeschl%C3%BCssel"></a>
 </h3>
-<p>The <em>Amtlicher Gemeindeschlüssel</em> (AGS) is a 8-digit code to identify a municipality (<em>Gemeinde</em>) and other regional units. The AGS has a hierarchical structure with the following components:</p>
+<p>The <em>Amtlicher Gemeindeschlüssel</em> (AGS) is a 8-digit code to
+identify a municipality (<em>Gemeinde</em>) and other regional units.
+The AGS has a hierarchical structure with the following components:</p>
 <ul>
 <li>1-2: Land (<em>Bundesland</em>)</li>
 <li>3-3: Administrative region (<em>Regierungsbezirk</em>)</li>
 <li>4-5: District (<em>Kreis</em>)</li>
 <li>6-8: Municipality (<em>Gemeinde</em>)</li>
 </ul>
-<p>For example, the municipality Dierfeld in Rheinland-Pfalz has the AGS 07231021:</p>
+<p>For example, the municipality Dierfeld in Rheinland-Pfalz has the AGS
+07231021:</p>
 <ul>
 <li>07: Land, Rheinland-Pfalz</li>
 <li>2: (former) administrative region of Trier</li>
 <li>32: District of Bernkastel-Wittlich</li>
 <li>021: Municipality of Dierfeld</li>
 </ul>
-<p>The five-digit version is sometimes referred to as <em>Kreisschlüssel</em> (district code) and the first two digits as <em>Bundeslandschüssel</em> (Land code). The Bundeslandschüssel are as follows:</p>
+<p>The five-digit version is sometimes referred to as
+<em>Kreisschlüssel</em> (district code) and the first two digits as
+<em>Bundeslandschüssel</em> (Land code). The Bundeslandschüssel are as
+follows:</p>
 <ul>
 <li>01: Schleswig-Holstein</li>
 <li>02: Freie und Hansestadt Hamburg</li>
@@ -114,22 +132,50 @@
 <div class="section level3">
 <h3 id="spatial-interpolation-weights">Spatial Interpolation Weights<a class="anchor" aria-label="anchor" href="#spatial-interpolation-weights"></a>
 </h3>
-<p>Area and population weighted interpolation becomes necessary when the territory of a unit (say A) is allocated to multiple other units (say C and D). While area weighted interpolation allocates A’s count proportionally to the area that goes from A to C and from A to D, population weighted interpolation uses the relative population size of A that goes to C and D. If all of A’s territory or population goes to either C or D, the interpolation weight is 1.</p>
-<p>Area and population weighted interpolation is simple, but the estimates come with some estimation error. This error is larger the more the underlying data are not distributed uniformly within unit A. Fortunately, in the majority of the territorial reforms since 1990, units are allocated to another unit as a whole. In these instances, there is no estimation error.</p>
-<p>The figure below shows the annual percentage share of today’s districts (n=401) and municipalities (n=11007) for which spatial interpolation is necessary to construct a time series. More specifically, the figure shows the percentage share of units for which the average (area-based) interpolation weight is not exactly 1 in every year since 1990.</p>
+<p>Area and population weighted interpolation becomes necessary when the
+territory of a unit (say A) is allocated to multiple other units (say C
+and D). While area weighted interpolation allocates A’s count
+proportionally to the area that goes from A to C and from A to D,
+population weighted interpolation uses the relative population size of A
+that goes to C and D. If all of A’s territory or population goes to
+either C or D, the interpolation weight is 1.</p>
+<p>Area and population weighted interpolation is simple, but the
+estimates come with some estimation error. This error is larger the more
+the underlying data are not distributed uniformly within unit A.
+Fortunately, in the majority of the territorial reforms since 1990,
+units are allocated to another unit as a whole. In these instances,
+there is no estimation error.</p>
+<p>The figure below shows the annual percentage share of today’s
+districts (n=401) and municipalities (n=11007) for which spatial
+interpolation is necessary to construct a time series. More
+specifically, the figure shows the percentage share of units for which
+the average (area-based) interpolation weight is not exactly 1 in every
+year since 1990.</p>
 <p><img src="ags_files/figure-html/unnamed-chunk-3-1.png" width="480"></p>
 </div>
 </div>
 <div class="section level2">
 <h2 id="usage">Usage<a class="anchor" aria-label="anchor" href="#usage"></a>
 </h2>
-<p>The package’s main function is <code>xwalk_ags</code>. To illustrate how this function works, we use federal election data from Saxony that are part of the package. The dataset includes the number of voters and valid votes on the district level between 1994 and 2017. The figure below shows turnout trends based on the data. There is a break in the time series between 2005 and 2009 when the number of districts in Saxony declined from 29 and 13 and all district identifiers changed.</p>
+<p>The package’s main function is <code>xwalk_ags</code>. To illustrate
+how this function works, we use federal election data from Saxony that
+are part of the package. The dataset includes the number of voters and
+valid votes on the district level between 1994 and 2017. The figure
+below shows turnout trends based on the data. There is a break in the
+time series between 2005 and 2009 when the number of districts in Saxony
+declined from 29 and 13 and all district identifiers changed.</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">btw_sn</span><span class="op">)</span></span>
 <span><span class="fu">ggplot</span><span class="op">(</span><span class="va">btw_sn</span>, <span class="fu">aes</span><span class="op">(</span><span class="va">year</span>, <span class="op">(</span><span class="va">valid</span><span class="op">/</span><span class="va">voters</span><span class="op">)</span><span class="op">*</span><span class="op">(</span><span class="fl">100</span><span class="op">)</span>, group<span class="op">=</span><span class="va">district</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> </span>
 <span><span class="fu">geom_line</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span> <span class="fu">geom_point</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span> <span class="fu">ylab</span><span class="op">(</span><span class="st">"Turnout (in %)"</span><span class="op">)</span> <span class="op">+</span> <span class="fu">xlab</span><span class="op">(</span><span class="st">"Year"</span><span class="op">)</span></span></code></pre></div>
 <p><img src="ags_files/figure-html/unnamed-chunk-4-1.png" width="480"></p>
-<p>To construct continuous time series on the number of voters and votes, we use the function <code>xwalk_ags</code>. It takes the input <code>data</code>, joins the crosswalk <code>xwalk</code> with the data by <code>ags</code> and <code>time</code> and then proceeds with the area or population interpolation depending on the parameter <code>weight</code>. If <code>variables</code> are left undefined the merged dataset will be returned instead.</p>
+<p>To construct continuous time series on the number of voters and
+votes, we use the function <code>xwalk_ags</code>. It takes the input
+<code>data</code>, joins the crosswalk <code>xwalk</code> with the data
+by <code>ags</code> and <code>time</code> and then proceeds with the
+area or population interpolation depending on the parameter
+<code>weight</code>. If <code>variables</code> are left undefined the
+merged dataset will be returned instead.</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span> <span class="va">btw_sn_ags20</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/xwalk_ags.html">xwalk_ags</a></span><span class="op">(</span></span>
 <span>  data<span class="op">=</span><span class="va">btw_sn</span>, </span>
@@ -150,8 +196,21 @@
 <span><span class="co">#&gt;   126    NA </span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; Unmatched obs: 29</span></span></code></pre></div>
-<p>The output of <code>xwalk_ags</code> provides information on the number of excluded observations as well as the number of matched and unmatched observations. Unmatched observations are the consequence of values in <code>ags</code> that appear at least once in the crosswalk but not in the year when they are used in the data. More specifically, the 29 unmatched observations reported above are from the 1994 election which was preceded by a territorial reform in August 1994 reducing the number of districts from 54 to 29. The 29 new district identifiers only appear in the 1995 crosswalk for the first time.</p>
-<p>To address this issue one can set <code>fuzzy_time=TRUE</code>. With fuzzy matching enabled, the data and the crosswalk are matched exactly by <code>ags</code> and as best as possible on <code>time</code>. The output of the function call below suggests that there are no unmatched observations left then. The subsequent figure displays the turnout trends across today’s district (<span class="math inline">\(n=13\)</span>) and all seven elections.</p>
+<p>The output of <code>xwalk_ags</code> provides information on the
+number of excluded observations as well as the number of matched and
+unmatched observations. Unmatched observations are the consequence of
+values in <code>ags</code> that appear at least once in the crosswalk
+but not in the year when they are used in the data. More specifically,
+the 29 unmatched observations reported above are from the 1994 election
+which was preceded by a territorial reform in August 1994 reducing the
+number of districts from 54 to 29. The 29 new district identifiers only
+appear in the 1995 crosswalk for the first time.</p>
+<p>To address this issue one can set <code>fuzzy_time=TRUE</code>. With
+fuzzy matching enabled, the data and the crosswalk are matched exactly
+by <code>ags</code> and as best as possible on <code>time</code>. The
+output of the function call below suggests that there are no unmatched
+observations left then. The subsequent figure displays the turnout
+trends across today’s district (<span class="math inline">\(n=13\)</span>) and all seven elections.</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span> <span class="va">btw_sn_ags20</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/xwalk_ags.html">xwalk_ags</a></span><span class="op">(</span></span>
 <span>  data<span class="op">=</span><span class="va">btw_sn</span>, </span>
@@ -182,8 +241,13 @@
 <h2 id="references">References<a class="anchor" aria-label="anchor" href="#references"></a>
 </h2>
 <ul>
-<li><p>Milbert, Antonia. 2010. <a href="https://www.bbsr.bund.de/BBSR/DE/veroeffentlichungen/berichte-kompakt/2010/BK062010.html" class="external-link">Gebietsreformen–politische Entscheidungen und Folgen für die Statistik.</a> BBSR-Berichte kompakt 6/2010. Bundesinsitut für Bau-, Stadt-und Raumfoschung.</p></li>
-<li><p><a href="https://www.statistischebibliothek.de/mir/receive/DEMonografie_mods_00000201" class="external-link">Glossar Statistischer Fachbegriffe - Glossary of Statistical Terms. Deutsch - Englisch | Englisch - Deutsch.</a>. Wiesbaden: Statistisches Bundesam 2013.</p></li>
+<li><p>Milbert, Antonia. 2010. <a href="https://www.bbsr.bund.de/BBSR/DE/veroeffentlichungen/berichte-kompakt/2010/BK062010.html" class="external-link">Gebietsreformen–politische
+Entscheidungen und Folgen für die Statistik.</a> BBSR-Berichte kompakt
+6/2010. Bundesinsitut für Bau-, Stadt-und Raumfoschung.</p></li>
+<li><p><a href="https://www.statistischebibliothek.de/mir/receive/DEMonografie_mods_00000201" class="external-link">Glossar
+Statistischer Fachbegriffe - Glossary of Statistical Terms. Deutsch -
+Englisch | Englisch - Deutsch.</a>. Wiesbaden: Statistisches Bundesam
+2013.</p></li>
 </ul>
 </div>
   </div>
