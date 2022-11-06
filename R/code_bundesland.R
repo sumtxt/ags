@@ -40,8 +40,8 @@
 #' @export
 code_bundesland <- function(
     sourcevar, 
-    origin="name", 
-    destination="ags", 
+    origin="ags", 
+    destination="name", 
     factor=FALSE) {
 
     if(is.factor(sourcevar)) sourcevar <- as.character(sourcevar)
