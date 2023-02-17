@@ -2,7 +2,7 @@
 % Please edit documentation in R/format_ags.R
 \name{format_ags}
 \alias{format_ags}
-\title{Formats AGS With a Leading Zero}
+\title{Formats AGS with a Leading Zero}
 \usage{
 format_ags(ags, type, verbose = FALSE)
 }
@@ -23,7 +23,7 @@ The abbreviations \code{l}, \code{d}, and \code{m} are also accepted.}
 \item{verbose}{If \code{TRUE} the function outputs additional information.}
 }
 \description{
-Formats AGS With a Leading Zero
+Formats AGS with a Leading Zero
 }
 \examples{
 format_ags(c(1,14), type="land")

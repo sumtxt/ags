@@ -1,9 +1,11 @@
 Package: ags
 Title: Crosswalk Municipality and District Statistics in Germany
-Version: 1.0.0
-Description: This packages helps to construct time series for Germany's municipalities (Gemeinden) and districts (Kreise) using a annual crosswalk constructed by the Bundesinstitut für Bau-, Stadt- und Raumforschung (BBSR). 
+Version: 1.0.1
+Description: Construct time series for Germany's municipalities (Gemeinden) and districts (Kreise) using a annual crosswalk constructed by the Federal Office for Building and Regional Planning (BBSR). 
 Author: Moritz Marbach" <m.marbach@ucl.ac.uk [aut, cre]
 Maintainer: Moritz Marbach <m.marbach@ucl.ac.uk>
+URL: https://sumtxt.github.io/ags/
+BugReports: https://github.com/sumtxt/ags/issues
 Imports: 
 	stats (>= 4.2.0), 
     rlang (>= 1.0.4),
@@ -18,7 +20,6 @@ RoxygenNote: 7.2.1
 Roxygen: list(markdown = TRUE)
 Suggests: 
     knitr,
-    rmarkdown, 
-    tidyverse
+    rmarkdown,
+    ggplot2
 VignetteBuilder: knitr
-URL: https://sumtxt.github.io/ags/

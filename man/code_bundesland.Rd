@@ -6,8 +6,8 @@
 \usage{
 code_bundesland(
   sourcevar,
-  origin = "name",
-  destination = "ags",
+  origin = "ags",
+  destination = "name",
   factor = FALSE
 )
 }

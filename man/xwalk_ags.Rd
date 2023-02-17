@@ -2,7 +2,7 @@
 % Please edit documentation in R/xwalk_ags.R
 \name{xwalk_ags}
 \alias{xwalk_ags}
-\title{Crosswalk municipality or district statistics}
+\title{Crosswalk Municipality or District Statistics}
 \usage{
 xwalk_ags(
   data,
