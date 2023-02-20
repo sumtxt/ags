@@ -14,6 +14,8 @@
 #' 
 #' @param verbose If \code{TRUE} the function outputs additional information. 
 #' 
+#' @return A character vector.
+#'
 #' @examples 
 #' format_ags(c(1,14), type="land")
 #' format_ags(c(1002,14612), type="district")

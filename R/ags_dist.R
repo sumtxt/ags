@@ -18,6 +18,8 @@
 #' With the default weights, this sum is the absolute difference 
 #' between x and y.
 #' 
+#' @return A numerical vector.
+#'
 #' @examples 
 #' ags_dist(14053,14059)
 #'
