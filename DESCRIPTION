@@ -2,8 +2,7 @@ Package: ags
 Title: Crosswalk Municipality and District Statistics in Germany
 Version: 1.0.1
 Description: Construct time series for Germany's municipalities (Gemeinden) and districts (Kreise) using a annual crosswalk constructed by the Federal Office for Building and Regional Planning (BBSR). 
-Author: Moritz Marbach" <m.marbach@ucl.ac.uk [aut, cre]
-Maintainer: Moritz Marbach <m.marbach@ucl.ac.uk>
+Authors@R: c(person("Moritz", "Marbach", role = c("aut", "cre"), email="m.marbach@ucl.ac.uk", comment = c(ORCID = "0000-0002-7101-2821")))
 URL: https://sumtxt.github.io/ags/
 BugReports: https://github.com/sumtxt/ags/issues
 Imports: 
