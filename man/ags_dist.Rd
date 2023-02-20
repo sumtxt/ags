@@ -17,6 +17,9 @@ ags_dist(x, y, landw = 10^6, kreisw = 10^3, gemw = 1, ceiling = 99999999)
 
 \item{ceiling}{truncate all distances at this value}
 }
+\value{
+A numerical vector.
+}
 \description{
 Defines a distance metric for the AGS
 }

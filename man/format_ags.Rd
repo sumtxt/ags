@@ -22,6 +22,9 @@ The abbreviations \code{l}, \code{d}, and \code{m} are also accepted.}
 
 \item{verbose}{If \code{TRUE} the function outputs additional information.}
 }
+\value{
+A character vector.
+}
 \description{
 Formats AGS with a Leading Zero
 }
