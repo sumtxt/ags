@@ -44,7 +44,7 @@ code_bundesland <- function(
     destination="name", 
     factor=FALSE) {
 
-    if(is.factor(sourcevar)) sourcevar <- as.character(sourcevar)
+    if(is.factor(sourcevar) | is.integer(sourcevar) | is.numeric(sourcevar)) sourcevar <- as.character(sourcevar)
 
     output <- rep(NA, length(sourcevar))
 
