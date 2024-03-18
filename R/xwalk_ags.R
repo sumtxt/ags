@@ -122,8 +122,8 @@ xwalk_ags <- function(data,
     if (length(lev) > 1) {
         stop("All values in ", ags, " need to be of equal length.")
     } else {
-        if (grepl("xc", xwalk) & lev != 5) {
-            stop("If district crosswalk is request, the values
+        if (grepl("xd", xwalk) & lev != 5) {
+            stop("If district crosswalk is requested, the values
                 in ags need to be of length 5.")
         }
         if (grepl("xm", xwalk) & lev != 8) {
